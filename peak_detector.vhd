@@ -13,4 +13,3 @@ begin
 	sig_out <= 	X"FF" when sig_in >= threshold else
 					X"00";
 end Behavioral;
-
