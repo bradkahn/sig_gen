@@ -45,7 +45,7 @@ ARCHITECTURE behavior OF fifo_tb IS
          clk : IN  std_logic;
          gpmc_clk : IN  std_logic;
 			enable : IN  std_logic;
-         write_en : IN  std_logic;
+         read_nwrite : IN  std_logic;
          mode : IN  std_logic;
          sample_in : IN  std_logic_vector(15 downto 0);
          sample_out : OUT  std_logic_vector(15 downto 0)
@@ -56,7 +56,7 @@ ARCHITECTURE behavior OF fifo_tb IS
    --Inputs
    signal clk : std_logic := '0';
    signal gpmc_clk : std_logic := '0';
-   signal write_en : std_logic := '0';
+   signal read_nwrite : std_logic := '0';
 	signal enable : std_logic := '0';
    signal mode : std_logic := '0';
    signal sample_in : std_logic_vector(15 downto 0) := (others => '0');
@@ -75,7 +75,7 @@ BEGIN
           clk => clk,
           gpmc_clk => gpmc_clk,
 			 enable => enable,
-          write_en => write_en,
+          read_nwrite => read_nwrite,
           mode => mode,
           sample_in => sample_in,
           sample_out => sample_out
@@ -104,7 +104,7 @@ BEGIN
    begin		
  
       -- insert stimulus here
-		write_en <= '1';
+		read_nwrite <= '0';
 		enable <= '1';
 		
 		sample_in <= X"0000";
@@ -204,10 +204,10 @@ BEGIN
 		
 		wait for gpmc_clk_period;
 		
-		write_en <= '0';
-		enable <= '0';
-		
-		wait for clk_period*5;
+		read_nwrite <= '1';
+		--enable <= '0';
+		mode<='0';
+		--wait for clk_period*5;
 		enable <= '1';
 --		wait for clk_period*32;
 --		enable <= '0';

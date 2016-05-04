@@ -6,6 +6,7 @@ entity waveform_generator is
 port(
 			waveform			: in std_logic_vector (2 downto 0);
 			amplitude		: in std_logic_vector (2 downto 0);
+--			custom_waveform: in std_logic_vector (15 downto 0); <-- TODO. Implement state machine for "load waveform"
 			clk 				: in std_logic;
 			sig_out			: out std_logic_vector (15 downto 0)
 		);
@@ -56,10 +57,13 @@ begin
 					sample <= tri_lut(i);
 				when "100" => -- ramp/sawtooth wave
 					sample <= rmp_lut(i);
-				when others => -- TODO: implement chirp, custom, noise, random waveforms
+				when others => -- TODO: implement chirp, custom, noise, random waveforms (all can be generated on CPU, and then sent as custom)
 					sample <= (others => 'Z');-- CHECK WHAT HAPPENS HERE WHEN CONVERTING 'Z' TO INTEGER
 			end case;
 			i := i + 1;
+			if i = 32 then
+				i := 0;
+			end if;
 		end if;
 	end process;
 end Behavioral;

@@ -30,13 +30,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity fifo is
-    Port	( clk			: in  STD_LOGIC;
-           gpmc_clk	: in  STD_LOGIC;
-			  enable		: in  STD_LOGIC;
-           write_en	: in  STD_LOGIC;
-			  mode		: in	STD_LOGIC; -- 1 = continuous, 0 = single-burst
-           sample_in	: in  STD_LOGIC_VECTOR (15 downto 0);
-           sample_out: out STD_LOGIC_VECTOR (15 downto 0)
+    Port	( clk				: in  STD_LOGIC;
+           gpmc_clk		: in  STD_LOGIC;
+			  enable			: in  STD_LOGIC;
+           read_nwrite	: in  STD_LOGIC;
+			  mode			: in	STD_LOGIC; -- 1 = continuous, 0 = single-burst
+           sample_in		: in  STD_LOGIC_VECTOR (15 downto 0);
+           sample_out	: out STD_LOGIC_VECTOR (15 downto 0)
 			);
 end fifo;
 
@@ -46,25 +46,34 @@ type MEMORY is array (0 to 31) of STD_LOGIC_VECTOR (15 downto 0);
 signal fifo_buffer : MEMORY := (others => x"0000");
 
 signal clk_process: STD_LOGIC := '0';
-
+signal fire			: STD_LOGIC := '1';
 begin
 
-	clk_process <= clk when write_en = '0' else gpmc_clk;
+	clk_process <= clk when read_nwrite = '1' else gpmc_clk;
 						
-	Process (clk_process)
+	Process (clk_process, enable)
 	variable read_index 	: integer range 0 to 31 := 0;
 	variable write_index : integer range 0 to 31 := 0;
 	
 	begin
 		if rising_edge(clk_process) then
 			if enable = '1' then	
-				if write_en = '0' then
+				-- BUFFER READ
+				if read_nwrite = '1' then
 					write_index := 0;
-					sample_out <= fifo_buffer(read_index);
-					read_index := read_index + 1;
-					if read_index = 32 then
-						read_index := 0;
-					end if;
+					if fire = '1' then
+						sample_out <= fifo_buffer(read_index);
+						read_index := read_index + 1;
+						if read_index = 32 then
+							read_index := 0;
+							if mode = '0' then
+								fire <= '0';
+							end if;
+						end if;
+					else 
+						sample_out <= (others=>'Z');
+ 					end if;
+				-- BUFFER WRITE
 				else
 					read_index := 0;
 					fifo_buffer(write_index) <= sample_in;
@@ -76,6 +85,6 @@ begin
 			end if;
 		end if;
 	end Process ; 
-
+	
 end Behavioral;
 
