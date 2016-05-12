@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="gpmc">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2016-5-11T10:12:30</timestamp>
+    <pin polarity="Input" x="0" y="-544" name="gpmc_clk_i" />
+    <pin polarity="Input" x="0" y="-480" name="gpmc_n_we" />
+    <pin polarity="Input" x="0" y="-416" name="gpmc_n_oe" />
+    <pin polarity="Input" x="0" y="-352" name="gpmc_n_adv_ale" />
+    <pin polarity="Input" x="0" y="-288" name="gpmc_n_wp" />
+    <pin polarity="Input" x="0" y="-96" name="gpmc_a(10:1)" />
+    <pin polarity="Input" x="0" y="-32" name="gpmc_n_cs(6:0)" />
+    <pin polarity="BiDirectional" x="512" y="-32" name="gpmc_d(15:0)" />
+    <pin polarity="Output" x="512" y="32" name="gpmc_clk" />
+    <pin polarity="Output" x="512" y="-288" name="threshold(15:0)" />
+    <pin polarity="Output" x="512" y="96" name="waveform_ctrl(15:0)" />
+    <graph>
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="256" y="-584" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-544" type="pin gpmc_clk_i" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin gpmc_n_we" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin gpmc_n_oe" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin gpmc_n_adv_ale" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-288" type="pin gpmc_n_wp" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin gpmc_a(10:1)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin gpmc_n_cs(6:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="440" y="-32" type="pin gpmc_d(15:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="440" y="32" type="pin gpmc_clk" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="440" y="-288" type="pin threshold(15:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="440" y="96" type="pin waveform_ctrl(15:0)" />
+        <rect width="64" x="448" y="84" height="24" />
+        <line x2="512" y1="96" y2="96" x1="448" />
+        <line x2="512" y1="32" y2="32" x1="448" />
+        <line x2="0" y1="-544" y2="-544" x1="64" />
+        <line x2="0" y1="-480" y2="-480" x1="64" />
+        <line x2="0" y1="-416" y2="-416" x1="64" />
+        <line x2="0" y1="-352" y2="-352" x1="64" />
+        <line x2="0" y1="-288" y2="-288" x1="64" />
+        <rect width="64" x="0" y="-108" height="24" />
+        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <rect width="64" x="0" y="-44" height="24" />
+        <line x2="0" y1="-32" y2="-32" x1="64" />
+        <rect width="64" x="448" y="-300" height="24" />
+        <line x2="512" y1="-288" y2="-288" x1="448" />
+        <rect width="64" x="448" y="-44" height="24" />
+        <line x2="512" y1="-32" y2="-32" x1="448" />
+        <rect width="384" x="64" y="-576" height="704" />
+    </graph>
+</symbol>

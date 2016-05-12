@@ -26,8 +26,6 @@ COMPONENT sig_gen
 PORT( mode            :	IN	STD_LOGIC;
       read_nwrite     :	IN	STD_LOGIC;
       enable          :	IN	STD_LOGIC;
-      sample_rate_clk :	IN	STD_LOGIC;
-      threshold       :	IN	STD_LOGIC_VECTOR (15 DOWNTO 0);
       peak_det_out    :	OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
       gpmc_clk        :	IN	STD_LOGIC;
       waveform_sel    :	IN	STD_LOGIC_VECTOR (2 DOWNTO 0);
@@ -54,8 +52,6 @@ BEGIN
 		mode => mode,
 		read_nwrite => read_nwrite,
 		enable => enable,
-		sample_rate_clk => sample_rate_clk,
-		threshold => threshold,
 		peak_det_out => peak_det_out,
 		gpmc_clk => gpmc_clk,
 		waveform_sel => waveform_sel,
