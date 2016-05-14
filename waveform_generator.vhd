@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity waveform_generator is
 port(
-			waveform			: in std_logic_vector (2 downto 0);
+			waveform		: in std_logic_vector (2 downto 0);
 			amplitude		: in std_logic_vector (2 downto 0);
 --			custom_waveform: in std_logic_vector (15 downto 0); <-- TODO. Implement state machine for "load waveform"
 			clk 				: in std_logic;

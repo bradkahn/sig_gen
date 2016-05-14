@@ -6,42 +6,50 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
+        <signal name="XLXN_47" />
+        <signal name="XLXN_50(15:0)" />
+        <signal name="XLXN_61(7:0)" />
+        <signal name="XLXN_62(7:0)" />
+        <signal name="XLXN_63" />
+        <signal name="XLXN_64" />
+        <signal name="XLXN_81" />
+        <signal name="XLXN_84(15:0)" />
+        <signal name="XLXN_105" />
+        <signal name="XLXN_108(15:0)" />
         <signal name="XLXN_8(15:0)" />
         <signal name="mode" />
         <signal name="read_nwrite" />
         <signal name="enable" />
-        <signal name="threshold(15:0)" />
-        <signal name="peak_det_out(15:0)" />
-        <signal name="gpmc_clk" />
-        <signal name="waveform_ctrl(13:11)" />
-        <signal name="XLXN_24(15:0)" />
-        <signal name="XLXN_36" />
         <signal name="sys_clk_P" />
         <signal name="sys_clk_N" />
-        <signal name="waveform_ctrl(2:0)" />
-        <signal name="waveform_ctrl(10:3)" />
-        <signal name="gpmc_clk_i" />
+        <signal name="XLXN_36" />
         <signal name="gpmc_n_we" />
         <signal name="gpmc_n_oe" />
         <signal name="gpmc_n_adv_ale" />
         <signal name="gpmc_n_wp" />
-        <signal name="gpmc_a(10:1)" />
         <signal name="gpmc_n_cs(6:0)" />
+        <signal name="XLXN_24(15:0)" />
+        <signal name="threshold(15:0)" />
+        <signal name="gpmc_a(10:1)" />
+        <signal name="gpmc_clk_i" />
+        <signal name="XLXN_129" />
+        <signal name="gpmc_clk" />
+        <signal name="peak_det_out(15:0)" />
+        <signal name="XLXN_132(15:0)" />
         <signal name="gpmc_d(15:0)" />
-        <signal name="waveform_ctrl(15:0)" />
-        <port polarity="Input" name="mode" />
-        <port polarity="Input" name="read_nwrite" />
-        <port polarity="Input" name="enable" />
-        <port polarity="Output" name="peak_det_out(15:0)" />
+        <signal name="XLXN_58(2:0)" />
+        <signal name="XLXN_59(2:0)" />
+        <signal name="XLXN_60(15:0)" />
         <port polarity="Input" name="sys_clk_P" />
         <port polarity="Input" name="sys_clk_N" />
-        <port polarity="Input" name="gpmc_clk_i" />
         <port polarity="Input" name="gpmc_n_we" />
         <port polarity="Input" name="gpmc_n_oe" />
         <port polarity="Input" name="gpmc_n_adv_ale" />
         <port polarity="Input" name="gpmc_n_wp" />
-        <port polarity="Input" name="gpmc_a(10:1)" />
         <port polarity="Input" name="gpmc_n_cs(6:0)" />
+        <port polarity="Input" name="gpmc_a(10:1)" />
+        <port polarity="Input" name="gpmc_clk_i" />
+        <port polarity="Output" name="peak_det_out(15:0)" />
         <port polarity="BiDirectional" name="gpmc_d(15:0)" />
         <blockdef name="fifo">
             <timestamp>2016-5-5T7:18:41</timestamp>
@@ -77,19 +85,19 @@
             <rect width="64" x="368" y="-172" height="24" />
             <line x2="432" y1="-160" y2="-160" x1="368" />
         </blockdef>
-        <blockdef name="clk_divider">
-            <timestamp>2016-5-11T7:37:17</timestamp>
-            <rect width="320" x="64" y="-192" height="192" />
-            <line x2="0" y1="-160" y2="-160" x1="64" />
-            <line x2="0" y1="-96" y2="-96" x1="64" />
-            <rect width="64" x="0" y="-44" height="24" />
-            <line x2="0" y1="-32" y2="-32" x1="64" />
-            <line x2="448" y1="-160" y2="-160" x1="384" />
-        </blockdef>
         <blockdef name="gpmc">
-            <timestamp>2016-5-11T10:12:30</timestamp>
-            <rect width="64" x="448" y="84" height="24" />
-            <line x2="512" y1="96" y2="96" x1="448" />
+            <timestamp>2016-5-14T21:10:25</timestamp>
+            <line x2="512" y1="480" y2="480" x1="448" />
+            <rect width="64" x="0" y="148" height="24" />
+            <line x2="0" y1="160" y2="160" x1="64" />
+            <line x2="512" y1="160" y2="160" x1="448" />
+            <line x2="512" y1="224" y2="224" x1="448" />
+            <rect width="64" x="448" y="276" height="24" />
+            <line x2="512" y1="288" y2="288" x1="448" />
+            <rect width="64" x="448" y="340" height="24" />
+            <line x2="512" y1="352" y2="352" x1="448" />
+            <rect width="64" x="448" y="404" height="24" />
+            <line x2="512" y1="416" y2="416" x1="448" />
             <line x2="512" y1="32" y2="32" x1="448" />
             <line x2="0" y1="-544" y2="-544" x1="64" />
             <line x2="0" y1="-480" y2="-480" x1="64" />
@@ -104,7 +112,16 @@
             <line x2="512" y1="-288" y2="-288" x1="448" />
             <rect width="64" x="448" y="-44" height="24" />
             <line x2="512" y1="-32" y2="-32" x1="448" />
-            <rect width="384" x="64" y="-576" height="704" />
+            <rect width="384" x="64" y="-576" height="1088" />
+        </blockdef>
+        <blockdef name="clk_divider">
+            <timestamp>2016-5-14T21:9:24</timestamp>
+            <rect width="320" x="64" y="-192" height="192" />
+            <line x2="0" y1="-160" y2="-160" x1="64" />
+            <line x2="0" y1="-96" y2="-96" x1="64" />
+            <rect width="64" x="0" y="-44" height="24" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+            <line x2="448" y1="-160" y2="-160" x1="384" />
         </blockdef>
         <block symbolname="fifo" name="XLXI_3">
             <blockpin signalname="XLXN_36" name="clk" />
@@ -115,24 +132,18 @@
             <blockpin signalname="XLXN_8(15:0)" name="sample_in(15:0)" />
             <blockpin signalname="XLXN_24(15:0)" name="sample_out(15:0)" />
         </block>
+        <block symbolname="waveform_generator" name="XLXI_6">
+            <blockpin signalname="gpmc_clk" name="clk" />
+            <blockpin signalname="XLXN_59(2:0)" name="waveform(2:0)" />
+            <blockpin signalname="XLXN_58(2:0)" name="amplitude(2:0)" />
+            <blockpin signalname="XLXN_8(15:0)" name="sig_out(15:0)" />
+        </block>
         <block symbolname="peak_detector" name="XLXI_5">
             <blockpin signalname="XLXN_24(15:0)" name="sig_in(15:0)" />
             <blockpin signalname="threshold(15:0)" name="threshold(15:0)" />
             <blockpin signalname="peak_det_out(15:0)" name="sig_out(15:0)" />
         </block>
-        <block symbolname="waveform_generator" name="XLXI_6">
-            <blockpin signalname="gpmc_clk" name="clk" />
-            <blockpin signalname="waveform_ctrl(2:0)" name="waveform(2:0)" />
-            <blockpin signalname="waveform_ctrl(13:11)" name="amplitude(2:0)" />
-            <blockpin signalname="XLXN_8(15:0)" name="sig_out(15:0)" />
-        </block>
-        <block symbolname="clk_divider" name="XLXI_7">
-            <blockpin signalname="sys_clk_P" name="sys_clk_P" />
-            <blockpin signalname="sys_clk_N" name="sys_clk_N" />
-            <blockpin signalname="waveform_ctrl(10:3)" name="freq_set(7:0)" />
-            <blockpin signalname="XLXN_36" name="sample_rate_clk" />
-        </block>
-        <block symbolname="gpmc" name="XLXI_17">
+        <block symbolname="gpmc" name="XLXI_14">
             <blockpin signalname="gpmc_clk_i" name="gpmc_clk_i" />
             <blockpin signalname="gpmc_n_we" name="gpmc_n_we" />
             <blockpin signalname="gpmc_n_oe" name="gpmc_n_oe" />
@@ -140,121 +151,137 @@
             <blockpin signalname="gpmc_n_wp" name="gpmc_n_wp" />
             <blockpin signalname="gpmc_a(10:1)" name="gpmc_a(10:1)" />
             <blockpin signalname="gpmc_n_cs(6:0)" name="gpmc_n_cs(6:0)" />
+            <blockpin signalname="peak_det_out(15:0)" name="signal_output(15:0)" />
             <blockpin signalname="gpmc_d(15:0)" name="gpmc_d(15:0)" />
             <blockpin signalname="gpmc_clk" name="gpmc_clk" />
+            <blockpin signalname="mode" name="mode" />
+            <blockpin signalname="enable" name="enable" />
+            <blockpin signalname="read_nwrite" name="read_nwrite" />
             <blockpin signalname="threshold(15:0)" name="threshold(15:0)" />
-            <blockpin signalname="waveform_ctrl(15:0)" name="waveform_ctrl(15:0)" />
+            <blockpin signalname="XLXN_60(15:0)" name="frequency(15:0)" />
+            <blockpin signalname="XLXN_59(2:0)" name="waveform_sel(2:0)" />
+            <blockpin signalname="XLXN_58(2:0)" name="amplitude(2:0)" />
+        </block>
+        <block symbolname="clk_divider" name="XLXI_15">
+            <blockpin signalname="sys_clk_P" name="sys_clk_P" />
+            <blockpin signalname="sys_clk_N" name="sys_clk_N" />
+            <blockpin signalname="XLXN_60(15:0)" name="freq_set(15:0)" />
+            <blockpin signalname="XLXN_36" name="sample_rate_clk" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
         <branch name="XLXN_8(15:0)">
-            <wire x2="1984" y1="1120" y2="1120" x1="1568" />
+            <wire x2="2032" y1="1552" y2="1552" x1="1616" />
         </branch>
-        <instance x="2720" y="896" name="XLXI_5" orien="R0">
-        </instance>
         <branch name="mode">
-            <wire x2="1984" y1="1056" y2="1056" x1="1824" />
+            <wire x2="1872" y1="1248" y2="1248" x1="816" />
+            <wire x2="1872" y1="1248" y2="1488" x1="1872" />
+            <wire x2="2032" y1="1488" y2="1488" x1="1872" />
         </branch>
         <branch name="read_nwrite">
-            <wire x2="1984" y1="992" y2="992" x1="1904" />
+            <wire x2="864" y1="1568" y2="1568" x1="816" />
+            <wire x2="864" y1="1424" y2="1568" x1="864" />
+            <wire x2="2032" y1="1424" y2="1424" x1="864" />
         </branch>
         <branch name="enable">
-            <wire x2="1984" y1="928" y2="928" x1="1840" />
+            <wire x2="816" y1="1312" y2="1328" x1="816" />
+            <wire x2="2032" y1="1328" y2="1328" x1="816" />
+            <wire x2="2032" y1="1328" y2="1360" x1="2032" />
         </branch>
-        <branch name="threshold(15:0)">
-            <wire x2="816" y1="592" y2="592" x1="736" />
-            <wire x2="816" y1="352" y2="592" x1="816" />
-            <wire x2="2688" y1="352" y2="352" x1="816" />
-            <wire x2="2688" y1="352" y2="864" x1="2688" />
-            <wire x2="2720" y1="864" y2="864" x1="2688" />
-        </branch>
-        <branch name="peak_det_out(15:0)">
-            <wire x2="3200" y1="800" y2="800" x1="3168" />
-        </branch>
-        <branch name="gpmc_clk">
-            <wire x2="832" y1="912" y2="912" x1="736" />
-            <wire x2="832" y1="912" y2="1120" x1="832" />
-            <wire x2="1088" y1="1120" y2="1120" x1="832" />
-            <wire x2="1136" y1="1120" y2="1120" x1="1088" />
-            <wire x2="1984" y1="864" y2="864" x1="1088" />
-            <wire x2="1088" y1="864" y2="1120" x1="1088" />
-        </branch>
-        <branch name="XLXN_24(15:0)">
-            <wire x2="2720" y1="800" y2="800" x1="2480" />
-        </branch>
-        <instance x="1184" y="608" name="XLXI_7" orien="R0">
-        </instance>
-        <iomarker fontsize="28" x="3200" y="800" name="peak_det_out(15:0)" orien="R0" />
         <branch name="sys_clk_P">
-            <wire x2="1184" y1="448" y2="448" x1="1152" />
+            <wire x2="1408" y1="976" y2="976" x1="1264" />
         </branch>
-        <iomarker fontsize="28" x="1152" y="448" name="sys_clk_P" orien="R180" />
         <branch name="sys_clk_N">
-            <wire x2="1184" y1="512" y2="512" x1="1152" />
+            <wire x2="1408" y1="1040" y2="1040" x1="1264" />
         </branch>
-        <iomarker fontsize="28" x="1152" y="512" name="sys_clk_N" orien="R180" />
-        <branch name="waveform_ctrl(10:3)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1053" y="576" type="branch" />
-            <wire x2="1056" y1="576" y2="576" x1="1008" />
-            <wire x2="1184" y1="576" y2="576" x1="1056" />
-        </branch>
-        <branch name="gpmc_clk_i">
-            <wire x2="224" y1="336" y2="336" x1="192" />
-        </branch>
-        <iomarker fontsize="28" x="192" y="336" name="gpmc_clk_i" orien="R180" />
-        <branch name="gpmc_n_we">
-            <wire x2="224" y1="400" y2="400" x1="192" />
-        </branch>
-        <iomarker fontsize="28" x="192" y="400" name="gpmc_n_we" orien="R180" />
-        <branch name="gpmc_n_oe">
-            <wire x2="224" y1="464" y2="464" x1="192" />
-        </branch>
-        <iomarker fontsize="28" x="192" y="464" name="gpmc_n_oe" orien="R180" />
-        <branch name="gpmc_n_adv_ale">
-            <wire x2="224" y1="528" y2="528" x1="192" />
-        </branch>
-        <iomarker fontsize="28" x="192" y="528" name="gpmc_n_adv_ale" orien="R180" />
-        <branch name="gpmc_n_wp">
-            <wire x2="224" y1="592" y2="592" x1="192" />
-        </branch>
-        <iomarker fontsize="28" x="192" y="592" name="gpmc_n_wp" orien="R180" />
-        <branch name="gpmc_a(10:1)">
-            <wire x2="224" y1="784" y2="784" x1="192" />
-        </branch>
-        <iomarker fontsize="28" x="192" y="784" name="gpmc_a(10:1)" orien="R180" />
-        <branch name="gpmc_n_cs(6:0)">
-            <wire x2="224" y1="848" y2="848" x1="192" />
-        </branch>
-        <iomarker fontsize="28" x="192" y="848" name="gpmc_n_cs(6:0)" orien="R180" />
-        <branch name="gpmc_d(15:0)">
-            <wire x2="768" y1="848" y2="848" x1="736" />
-        </branch>
-        <iomarker fontsize="28" x="768" y="848" name="gpmc_d(15:0)" orien="R0" />
-        <iomarker fontsize="28" x="1824" y="1056" name="mode" orien="R180" />
-        <iomarker fontsize="28" x="1904" y="992" name="read_nwrite" orien="R180" />
-        <iomarker fontsize="28" x="1840" y="928" name="enable" orien="R180" />
-        <branch name="waveform_ctrl(15:0)">
-            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="656" y="1184" type="branch" />
-            <wire x2="800" y1="1184" y2="1184" x1="656" />
-            <wire x2="800" y1="976" y2="976" x1="736" />
-            <wire x2="800" y1="976" y2="1184" x1="800" />
-        </branch>
-        <instance x="224" y="880" name="XLXI_17" orien="R0">
-        </instance>
-        <instance x="1984" y="1152" name="XLXI_3" orien="R0">
+        <instance x="2032" y="1584" name="XLXI_3" orien="R0">
         </instance>
         <branch name="XLXN_36">
-            <wire x2="1648" y1="448" y2="448" x1="1632" />
-            <wire x2="1648" y1="448" y2="800" x1="1648" />
-            <wire x2="1984" y1="800" y2="800" x1="1648" />
+            <wire x2="2016" y1="976" y2="976" x1="1856" />
+            <wire x2="2016" y1="976" y2="1232" x1="2016" />
+            <wire x2="2032" y1="1232" y2="1232" x1="2016" />
         </branch>
-        <instance x="1136" y="1280" name="XLXI_6" orien="R0">
+        <instance x="1184" y="1712" name="XLXI_6" orien="R0">
         </instance>
-        <branch name="waveform_ctrl(2:0)">
-            <wire x2="1136" y1="1184" y2="1184" x1="864" />
+        <branch name="gpmc_n_we">
+            <wire x2="304" y1="608" y2="608" x1="256" />
         </branch>
-        <branch name="waveform_ctrl(13:11)">
-            <wire x2="1136" y1="1248" y2="1248" x1="896" />
+        <branch name="gpmc_n_oe">
+            <wire x2="304" y1="672" y2="672" x1="256" />
         </branch>
+        <branch name="gpmc_n_adv_ale">
+            <wire x2="304" y1="736" y2="736" x1="256" />
+        </branch>
+        <branch name="gpmc_n_wp">
+            <wire x2="304" y1="800" y2="800" x1="256" />
+        </branch>
+        <branch name="gpmc_n_cs(6:0)">
+            <wire x2="304" y1="1056" y2="1056" x1="256" />
+        </branch>
+        <branch name="XLXN_24(15:0)">
+            <wire x2="2768" y1="1232" y2="1232" x1="2528" />
+        </branch>
+        <instance x="2768" y="1328" name="XLXI_5" orien="R0">
+        </instance>
+        <branch name="threshold(15:0)">
+            <wire x2="2736" y1="800" y2="800" x1="816" />
+            <wire x2="2736" y1="800" y2="1296" x1="2736" />
+            <wire x2="2768" y1="1296" y2="1296" x1="2736" />
+        </branch>
+        <branch name="gpmc_a(10:1)">
+            <wire x2="304" y1="992" y2="992" x1="256" />
+        </branch>
+        <branch name="gpmc_clk_i">
+            <wire x2="304" y1="544" y2="544" x1="256" />
+        </branch>
+        <branch name="gpmc_clk">
+            <wire x2="1040" y1="1120" y2="1120" x1="816" />
+            <wire x2="1040" y1="1120" y2="1552" x1="1040" />
+            <wire x2="1136" y1="1552" y2="1552" x1="1040" />
+            <wire x2="1184" y1="1552" y2="1552" x1="1136" />
+            <wire x2="2032" y1="1296" y2="1296" x1="1136" />
+            <wire x2="1136" y1="1296" y2="1552" x1="1136" />
+        </branch>
+        <branch name="peak_det_out(15:0)">
+            <wire x2="304" y1="1248" y2="1248" x1="224" />
+            <wire x2="224" y1="1248" y2="1776" x1="224" />
+            <wire x2="3232" y1="1776" y2="1776" x1="224" />
+            <wire x2="3232" y1="1232" y2="1232" x1="3216" />
+            <wire x2="3248" y1="1232" y2="1232" x1="3232" />
+            <wire x2="3232" y1="1232" y2="1776" x1="3232" />
+        </branch>
+        <branch name="gpmc_d(15:0)">
+            <wire x2="832" y1="1056" y2="1056" x1="816" />
+        </branch>
+        <branch name="XLXN_58(2:0)">
+            <wire x2="992" y1="1504" y2="1504" x1="816" />
+            <wire x2="992" y1="1504" y2="1680" x1="992" />
+            <wire x2="1184" y1="1680" y2="1680" x1="992" />
+        </branch>
+        <branch name="XLXN_59(2:0)">
+            <wire x2="1008" y1="1440" y2="1440" x1="816" />
+            <wire x2="1008" y1="1440" y2="1616" x1="1008" />
+            <wire x2="1184" y1="1616" y2="1616" x1="1008" />
+        </branch>
+        <branch name="XLXN_60(15:0)">
+            <wire x2="1392" y1="1376" y2="1376" x1="816" />
+            <wire x2="1392" y1="1104" y2="1376" x1="1392" />
+            <wire x2="1408" y1="1104" y2="1104" x1="1392" />
+        </branch>
+        <instance x="304" y="1088" name="XLXI_14" orien="R0">
+        </instance>
+        <instance x="1408" y="1136" name="XLXI_15" orien="R0">
+        </instance>
+        <iomarker fontsize="28" x="3248" y="1232" name="peak_det_out(15:0)" orien="R0" />
+        <iomarker fontsize="28" x="832" y="1056" name="gpmc_d(15:0)" orien="R0" />
+        <iomarker fontsize="28" x="1264" y="1040" name="sys_clk_N" orien="R180" />
+        <iomarker fontsize="28" x="1264" y="976" name="sys_clk_P" orien="R180" />
+        <iomarker fontsize="28" x="256" y="544" name="gpmc_clk_i" orien="R180" />
+        <iomarker fontsize="28" x="256" y="608" name="gpmc_n_we" orien="R180" />
+        <iomarker fontsize="28" x="256" y="672" name="gpmc_n_oe" orien="R180" />
+        <iomarker fontsize="28" x="256" y="736" name="gpmc_n_adv_ale" orien="R180" />
+        <iomarker fontsize="28" x="256" y="800" name="gpmc_n_wp" orien="R180" />
+        <iomarker fontsize="28" x="256" y="992" name="gpmc_a(10:1)" orien="R180" />
+        <iomarker fontsize="28" x="256" y="1056" name="gpmc_n_cs(6:0)" orien="R180" />
     </sheet>
 </drawing>
