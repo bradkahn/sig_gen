@@ -1,6 +1,7 @@
--- Vhdl test bench created from schematic /home/brad/Rhino/Xilinx/brads_projects/sig_gen/sig_gen.sch - Wed May 11 10:34:30 2016
+
+  -- Vhdl test bench created from schematic /home/brad/Rhino/Xilinx/brads_projects/sig_gen/sig_gen.sch - Wed May 11 10:34:30 2016
 --
--- Notes: 
+-- Notes:
 -- 1) This testbench template has been automatically generated using types
 -- std_logic and std_logic_vector for the ports of the unit under test.
 -- Xilinx recommends that these types always be used for the top-level
@@ -9,7 +10,7 @@
 -- 2) To use this template as your testbench, change the filename to any
 -- name of your choice with the extension .vhd, and use the "Source->Add"
 -- menu in Project Navigator to import the testbench. Then
--- edit the user defined section below, adding code to generate the 
+-- edit the user defined section below, adding code to generate the
 -- stimulus for your design.
 --
 LIBRARY ieee;
@@ -19,22 +20,22 @@ LIBRARY UNISIM;
 USE UNISIM.Vcomponents.ALL;
 ENTITY sig_gen_sig_gen_sch_tb IS
 END sig_gen_sig_gen_sch_tb;
-ARCHITECTURE behavioral OF sig_gen_sig_gen_sch_tb IS 
+ARCHITECTURE behavioral OF sig_gen_sig_gen_sch_tb IS
 
    COMPONENT sig_gen
-   PORT( mode	:	IN	STD_LOGIC; 
-          read_nwrite	:	IN	STD_LOGIC; 
-          enable	:	IN	STD_LOGIC; 
-          peak_det_out	:	OUT	STD_LOGIC_VECTOR (15 DOWNTO 0); 
-          sys_clk_P	:	IN	STD_LOGIC; 
-          sys_clk_N	:	IN	STD_LOGIC; 
-          gpmc_clk_i	:	IN	STD_LOGIC; 
-          gpmc_n_we	:	IN	STD_LOGIC; 
-          gpmc_n_oe	:	IN	STD_LOGIC; 
-          gpmc_n_adv_ale	:	IN	STD_LOGIC; 
-          gpmc_n_wp	:	IN	STD_LOGIC; 
-          gpmc_a	:	IN	STD_LOGIC_VECTOR (10 DOWNTO 1); 
-          gpmc_n_cs	:	IN	STD_LOGIC_VECTOR (6 DOWNTO 0); 
+   PORT( mode	:	IN	STD_LOGIC;
+          read_nwrite	:	IN	STD_LOGIC;
+          enable	:	IN	STD_LOGIC;
+          peak_det_out	:	OUT	STD_LOGIC_VECTOR (15 DOWNTO 0);
+          sys_clk_P	:	IN	STD_LOGIC;
+          sys_clk_N	:	IN	STD_LOGIC;
+          gpmc_clk_i	:	IN	STD_LOGIC;
+          gpmc_n_we	:	IN	STD_LOGIC;
+          gpmc_n_oe	:	IN	STD_LOGIC;
+          gpmc_n_adv_ale	:	IN	STD_LOGIC;
+          gpmc_n_wp	:	IN	STD_LOGIC;
+          gpmc_a	:	IN	STD_LOGIC_VECTOR (10 DOWNTO 1);
+          gpmc_n_cs	:	IN	STD_LOGIC_VECTOR (6 DOWNTO 0);
           gpmc_d	:	INOUT	STD_LOGIC_VECTOR (15 DOWNTO 0));
    END COMPONENT;
 
@@ -57,23 +58,23 @@ ARCHITECTURE behavioral OF sig_gen_sig_gen_sch_tb IS
    constant gpmc_fclk_period: time := 12 ns;
 	signal   sys_clk: std_logic:='0'; -- internal system clock for FPGA
 	constant sys_clk_period : time := 10 ns;
-	
+
 BEGIN
 
    UUT: sig_gen PORT MAP(
-		mode => mode, 
-		read_nwrite => read_nwrite, 
-		enable => enable, 
-		peak_det_out => peak_det_out, 
-		sys_clk_P => sys_clk_P, 
-		sys_clk_N => sys_clk_N, 
-		gpmc_clk_i => gpmc_clk_i, 
-		gpmc_n_we => gpmc_n_we, 
-		gpmc_n_oe => gpmc_n_oe, 
-		gpmc_n_adv_ale => gpmc_n_adv_ale, 
-		gpmc_n_wp => gpmc_n_wp, 
-		gpmc_a => gpmc_a, 
-		gpmc_n_cs => gpmc_n_cs, 
+		mode => mode,
+		read_nwrite => read_nwrite,
+		enable => enable,
+		peak_det_out => peak_det_out,
+		sys_clk_P => sys_clk_P,
+		sys_clk_N => sys_clk_N,
+		gpmc_clk_i => gpmc_clk_i,
+		gpmc_n_we => gpmc_n_we,
+		gpmc_n_oe => gpmc_n_oe,
+		gpmc_n_adv_ale => gpmc_n_adv_ale,
+		gpmc_n_wp => gpmc_n_wp,
+		gpmc_a => gpmc_a,
+		gpmc_n_cs => gpmc_n_cs,
 		gpmc_d => gpmc_d
    );
    -- Clock process definitions FCLK
@@ -93,16 +94,16 @@ BEGIN
 		sys_clk <= '1';
 		wait for sys_clk_period/2;
    end process;
-	
+
 	-- Generate dff clock
 		sys_clk_P <= sys_clk;
 		sys_clk_N <= not(sys_clk);
-		
+
 -- *** Test Bench - User Defined Section ***
    tb : PROCESS
    BEGIN
-				mode<='1'; 
-				read_nwrite<='0'; 
+				mode<='1';
+				read_nwrite<='0';
 				enable<='1';
       WAIT; -- will wait forever
    END PROCESS;

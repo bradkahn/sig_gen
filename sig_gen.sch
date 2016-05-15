@@ -6,16 +6,6 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
-        <signal name="XLXN_47" />
-        <signal name="XLXN_50(15:0)" />
-        <signal name="XLXN_61(7:0)" />
-        <signal name="XLXN_62(7:0)" />
-        <signal name="XLXN_63" />
-        <signal name="XLXN_64" />
-        <signal name="XLXN_81" />
-        <signal name="XLXN_84(15:0)" />
-        <signal name="XLXN_105" />
-        <signal name="XLXN_108(15:0)" />
         <signal name="XLXN_8(15:0)" />
         <signal name="mode" />
         <signal name="read_nwrite" />
@@ -32,10 +22,8 @@
         <signal name="threshold(15:0)" />
         <signal name="gpmc_a(10:1)" />
         <signal name="gpmc_clk_i" />
-        <signal name="XLXN_129" />
         <signal name="gpmc_clk" />
         <signal name="peak_det_out(15:0)" />
-        <signal name="XLXN_132(15:0)" />
         <signal name="gpmc_d(15:0)" />
         <signal name="XLXN_58(2:0)" />
         <signal name="XLXN_59(2:0)" />
