@@ -9,7 +9,23 @@
 -- Target Devices:RHINO (Spartan 6)
 -- Tool versions: 
 -- Description: 	32x16bit FIFO buffer. Waveform samples are fed in from a waveform generator, synched to the GPMC_CLK.
---
+
+--			 sampling clock
+--			+-------------------------+
+--			 gpmc clock               |
+--			+--------------------+    |
+--										|    |
+--			 mode        +-------v----v--------------------+
+--			+------------>                                 |
+--			 enable      |                                 |  sample out
+--			+------------>       32x16 FIFO BUFFER         +------------>
+--			 r/!w        |                                 |
+--			+------------>                                 |
+--			 sample in   |                                 |
+--			+------------>                                 |
+--							 +---------------------------------+
+
+
 -- Dependencies: 
 --
 -- Revision: 
@@ -46,10 +62,10 @@ type MEMORY is array (0 to 31) of STD_LOGIC_VECTOR (15 downto 0);
 signal fifo_buffer : MEMORY := (others => x"0000");
 
 signal clk_process: STD_LOGIC := '0';
-signal fire			: STD_LOGIC := '1';
+signal fire			: STD_LOGIC := '1'; -- used as 'enable' signal for read mode
 begin
 
-	clk_process <= clk when read_nwrite = '1' else gpmc_clk;
+	clk_process <= clk when read_nwrite = '1' else gpmc_clk; -- clocked by system clk when in read mode, clked by gpmc clk in write mode
 						
 	Process (clk_process, enable)
 	variable read_index 	: integer range 0 to 31 := 0;
@@ -79,7 +95,7 @@ begin
 					fifo_buffer(write_index) <= sample_in;
 					write_index := write_index + 1;
 					if write_index = 32 then
-						write_index := 0;
+						write_index := 0; -- wrap around to start of buffer
 					end if;
 				end if;
 			end if;
